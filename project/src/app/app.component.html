@@ -1,0 +1,183 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  fieldset{
+    border:3px solid grey;
+   
+  }
+  .fieldsetout{
+    margin-left:10cm ;
+    margin-right:10cm;
+    height: 550px;
+  }
+  .fieldsetin{
+    margin-left:3cm ;
+    margin-right:3cm;
+  }
+  .form{
+    border: #24292e;
+    text-decoration: 5px bold;
+    
+  }
+  .name{
+    margin-left: 2cm;
+    background-color: lightgrey;
+    width: 30%;
+    padding:0.25cm;
+    border:none;
+}
+.but{
+    margin-left: 7cm;
+    background-color: lightgrey;
+    width: 10%;
+    padding:0.25cm;
+    border:none;
+}
+
+
+  
+  svg#rocket {
+    width: 80px;
+    position: absolute;
+    left: -10px;
+    top: -24px;
+  }
+
+  svg#rocket-smoke {
+    height: calc(100vh - 95px);
+    position: absolute;
+    top: 10px;
+    right: 180px;
+    z-index: -10;
+  }
+
+  .radiobut{
+    width: 25px;
+    height: 25px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .radiobut .checkmark{
+    width: calc(100%-6px);
+    height: calc(100%-6px);
+    border-radius: 50%;
+    background-color: green;
+    display: none;
+  }
+  .radiobut input{
+    display: none;
+  }
+
+  .radiobut input:checked+ .checkmark{
+    display: inline-block;
+  }
+
+  .github-star-badge {
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 10px;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: 3px;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    margin-left: 4px;
+    font-weight: 600;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  }
+
+  .github-star-badge:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Toolbar -->
+<br>
+<fieldset class="fieldsetout">
+<form class="form">
+  <div style="font-size: 20px  ;"  ><br>
+  District name: <input type="text" placeholder="" class = "name"><br><br>
+  Area (sq.m)  : <input type="text" placeholder="" class = "name"><br><br>
+  Population   : <input type="text" placeholder="" class = "name"><br><br>
+  <input class="but" type="submit" value="Save">
+  <br><br><br>
+</div>
+
+<fieldset class="fieldsetin">
+  <p><b>Biggest District(Area wise)</b></p><br>
+  <input type="radio" id="chennai" name="bigcity" value="chennai">
+  <label for="chennai">Chennai</label>
+  <input type="radio" id="coimbatore" name="bigcity" value="coimbatore">
+  <label for="coimbatore">Coimbatore</label>
+  <input type="radio" id="salem" name="bigcity" value="salem">
+  <label for="salem">Salem</label>
+</fieldset><br>
+<fieldset class="fieldsetin">
+  <p><b>Highest populated District(Area wise)</b></p><br>
+  <input type="radio" id="chennai" name="highpop" value="chennai">
+  <label for="chennai">Chennai</label>
+  <input type="radio" id="coimbatore" name="highpop" value="coimbatore">
+  <label for="coimbatore">Coimbatore</label>
+  <input type="radio" id="salem" name="highpop" value="salem">
+  <label for="salem">Salem</label>
+</fieldset>
+</form>
+</fieldset>
+<router-outlet></router-outlet>
